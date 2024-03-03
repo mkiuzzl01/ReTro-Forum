@@ -33,10 +33,10 @@
                 </div>
                 <div class="navbar-end space-x-2">
                     <div class="hidden lg:flex space-x-2">
-                    <button class="btn rounded-full border p-4"><i class="fa-solid fa-house-chimney"></i></button>
-                    <button class="btn rounded-full border p-4"><i class="fa-solid fa-pencil"></i></button>
-                    <button class="btn rounded-full border p-4"><i class="fa-solid fa-user-plus"></i></button>
-                    <button class="btn rounded-full border p-4"><i class="fa-regular fa-flag"></i></button>
+                    <button title="Home" class="btn rounded-full border p-4"><i class="fa-solid fa-house-chimney"></i></button>
+                    <button title="Edit" class="btn rounded-full border p-4"><i class="fa-solid fa-pencil"></i></button>
+                    <button title="User" class="btn rounded-full border p-4"><i class="fa-solid fa-user-plus"></i></button>
+                    <button title="Contact" class="btn rounded-full border p-4"><i class="fa-regular fa-flag"></i></button>
                     </div>
                   <a class="btn bg-[#797DFC] text-white font-bold rounded-full">Sign in</a>
                 </div>
@@ -87,54 +87,25 @@
         <!-- this is discuss card container section -->
         <section>
             <div class="flex flex-col lg:flex-row justify-between gap-6">
-                <div class="card max-w-[600px]: bg-[#F3F3F5] p-10">
-                    <div class="flex space-x-3">
-                        <div>
-                            <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="w-20 rounded-full" />
-                        </div>
-                      <div>
-                        <div>
-                            <div class="border-dashed border-b-2 space-y-2">
-                                <p class="">#<span class="px-1">music</span>Author:<span> MD Khairul islam</span></p>
-                                <h2 class="card-title">10 Kids Unaware of Their Halloween Costume</h2>
-                                  <p class="pb-2">It’s one thing to subject yourself to ha Halloween costume mishap because, hey that’s your prerogative</p>
-                            </div>
-                        </div>
-                        <div class="py-3">
-                          <div class="card-actions justify-between">
-                            <div class="flex space-x-2">
-                                <p><i class="fa-regular fa-message"></i><span class="px-2">434</span></p>
-                                <p><i class="fa-regular fa-eye"></i><span class="px-2">665</span></p>
-                                <p><i class="fa-regular fa-clock"></i><span class="px-2">4213</span></p>
-                            </div> 
-                            <div><button class="btn bg-[#10B981] p-4 rounded-full text-white"><i class="fa-regular fa-envelope-open"></i></button></i></div>
-                          </div>
-                        </div>
-                      </div>
-                      </div>
-                </div>
-                <div class="card bg-[#F3F3F5] max-w-[380px] p-6">
+              <div id="post-container">
+                <!-- here post dynamically updated -->
+              </div>
+                <div class="card bg-[#F3F3F5] max-w-[380px]">
                     <div class="card-body text-[#12132DCC] font-medium">
                      <table>
                          <tr>
-                             <td>Registered Users</td>
-                             <td>Mark as read (4)</td>
+                             <th class="m-4">Registered Users</th>
+                             <th>Mark as read (<span id="read-card-count">0</span>)</th>
                          </tr>
                      </table>
-
                      <div class="flex justify-between">
-                      <table>
-                        <tr>
-                          <td>10 Kids Unaware of Their Halloween Costume</td>
-                          <td><p><i class="fa-regular fa-eye inline"></i><span class="px-2 ">665</span></p></td>
-                        </tr>
-                        <tr>
-                          <td>10 Kids Unaware of Their Halloween Costume</td>
-                          <td><p><i class="fa-regular fa-eye inline"></i><span class="px-2 ">665</span></p></td>
-                        </tr>
+                       <table>
+                         <div id="read-card">
+                          <!-- this content dynamically changeable -->
+
+                        </div>
                       </table>
                      </div>
-
                     </div>
                    </div>
                 </div>
