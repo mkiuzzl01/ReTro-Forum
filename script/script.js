@@ -4,12 +4,17 @@ const allPost = async () =>{
     const data = await res.json();
     showPost(data.posts);
 }
+const latestPost = async ()=>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`);
+    const data = await res.json();
+    latest(data);
+}
 
 const showPost = (posts)=>{
 
     const postsContainer = document.getElementById('post-container');
     posts.forEach(element => {
-        console.log(element);
+
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="card max-w-[600px]: bg-[#F3F3F5] p-10 mb-4">
@@ -45,6 +50,36 @@ postsContainer.appendChild(div);
     });
 }
 
+//this latestPost function
+const latest = (data)=>{
+    console.log(data);
+    const latest = document.getElementById('latest-Post');
+    data.forEach(info =>{
+        console.log(info);
+        const div = document.createElement('div');
+        div.innerHTML = `
+        <div class="card w-96 bg-base-100 border-2">
+        <figure><img src="${info.cover_image}" alt="Shoes" /></figure>
+        <div class="card-body">
+          <div class="space-x-2">
+            <i class="fa-regular fa-calendar"></i>
+            <p class="inline"><span>${info.author.posted_date?`${info.author.posted_date}`:`No publish Date`}</span></p>
+          </div>
+          <h2 class="font-extrabold"><span>${info.title}</span></h2>
+          <p>${info.description}</p>
+          <div class="card-actions">
+            <div><img src="${info.profile_image}" alt="" class="w-14 rounded-full"></div> 
+            <div>
+              <h2><span>${info.author.name?`${info.author.name}`:`Unknown`}</span></h2>
+              <h4>${info.author?.designation?`${info.author.designation}`:`Unknown`}</h4>
+            </div>
+          </div>
+        </div>
+      </div>`;
+      latest.appendChild(div);
+    });
+}
+
 //this is add post function here
 const addPost = (element)=>{
     let cardCount = document.getElementById('read-card-count').innerText;
@@ -64,3 +99,4 @@ const addPost = (element)=>{
 } 
 
 allPost();
+latestPost();
