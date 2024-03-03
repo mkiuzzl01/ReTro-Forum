@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- this is tailwind and daisy ui cdn link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- this is fontawesome icon cdn -->
+    <script src="https://kit.fontawesome.com/4287072886.js" crossorigin="anonymous"></script>
+    <title>ReTro</title>
+</head>
+<body class="mulish-font">
+    <header class="max-w-[1170px] m-auto">
+        <!-- this is navigation bar here -->
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                  <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                       <div class="flex flex-col space-y-2 ">
+                    <button class="btn rounded-full border p-4"><i class="fa-solid fa-house-chimney"></i><button>
+                    <button class="btn rounded-full border p-4"><i class="fa-solid fa-pencil"></i></button>
+                    <button class="btn rounded-full border p-4"><i class="fa-solid fa-user-plus"></i></button>
+                    <button class="btn rounded-full border p-4"><i class="fa-regular fa-flag"></i></button>
+                       </div>
+                    </ul>
+                  </div>
+                  <a><img src="images/logo.png" alt=""></a>
+                </div>
+                <div class="navbar-end space-x-2">
+                    <div class="hidden lg:flex space-x-2">
+                    <button class="btn rounded-full border p-4"><i class="fa-solid fa-house-chimney"></i></button>
+                    <button class="btn rounded-full border p-4"><i class="fa-solid fa-pencil"></i></button>
+                    <button class="btn rounded-full border p-4"><i class="fa-solid fa-user-plus"></i></button>
+                    <button class="btn rounded-full border p-4"><i class="fa-regular fa-flag"></i></button>
+                    </div>
+                  <a class="btn bg-[#797DFC] text-white font-bold rounded-full">Sign in</a>
+                </div>
+              </div>
+        <!-- this is banner part here -->
+        <div class="hero bg-[#12132D] text-white bg-[url(images/bgbanner.png)] lg:p-24 rounded-xl">
+            <div class="hero-content flex-col lg:flex-row">
+              <div class="flex flex-col space-y-2">
+                <h1 class="text-4xl lg:text-6xl font-black">Welcome to the <span class="text-[#797DFC]-to-r from to text-[#797DFC]">ReTro</span> Forum</h1>
+                <p>Share your favorite opinion and win and wp <br> forum coffee mug!</p>
+                <label class="input max-w-[400px] rounded-3xl input-bordered flex items-center gap-2">
+                    <input type="text" class="grow text-black" placeholder="Search here anything" />
+                    <button class="btn bg-[#797DFC] rounded-3xl text-white">Search</button>
+                  </label>
+              </div>
+              <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+               <div class="card-body text-[#12132DCC] font-medium">
+                <table>
+                    <tr>
+                        <td>Registered Users</td>
+                        <td>01</td>
+                    </tr>
+                    <tr>
+                        <td>Forum</td>
+                        <td>05</td>
+                    </tr>
+                    <tr>
+                        <td>Topics</td>
+                        <td>01</td>
+                    </tr>
+                    <tr>
+                        <td>Replies</td>
+                        <td>01</td>
+                    </tr>
+                </table>
+               </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+    </header>
+    <main class="max-w-[1170px] m-auto">
+        <!-- let's discuss section -->
+        <section class="p-10 lg:p-20 text-center space-y-4">
+            <h1 class="text-4xl font-black">Let’s Discuss</h1>
+            <p>Yes, you can run unit tests and view the results directly within the app. <br> The integrated testing features allow for a streamlined .</p>
+        </section>
+        <!-- this is discuss card container section -->
+        <section>
+            <div class="flex flex-col lg:flex-row justify-between gap-6">
+                <div class="card max-w-[600px]: bg-[#F3F3F5] shadow-xl p-10">
+                    <div class="flex space-x-3">
+                        <div>
+                            <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="w-20 rounded-full" />
+                        </div>
+                      <div>
+                        <div>
+                            <div class="border-dashed border-b-2 space-y-2">
+                                <p class="">#<span class="px-1">music</span>Author:<span> MD Khairul islam</span></p>
+                                <h2 class="card-title">10 Kids Unaware of Their Halloween Costume</h2>
+                                  <p class="pb-2">It’s one thing to subject yourself to ha Halloween costume mishap because, hey that’s your prerogative</p>
+                            </div>
+                        </div>
+                        <div class="py-3">
+                          <div class="card-actions justify-between">
+                            <div class="flex space-x-2">
+                                <p><i class="fa-regular fa-message"></i><span class="px-2">434</span></p>
+                                <p><i class="fa-regular fa-eye"></i><span class="px-2">665</span></p>
+                                <p><i class="fa-regular fa-clock"></i><span class="px-2">4213</span></p>
+                            </div> 
+                            <div><button class="btn bg-[#10B981] p-4 rounded-full text-white"><i class="fa-regular fa-envelope-open"></i></button></i></div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                </div>
+                <div class="card bg-[#F3F3F5] max-w-[380px] p-6">
+                    <div class="card-body text-[#12132DCC] font-medium">
+                     <table>
+                         <tr>
+                             <td>Registered Users</td>
+                             <td>Mark as read (4)</td>
+                         </tr>
+                     </table>
+
+                     <div class="flex justify-between">
+                      <table>
+                        <tr>
+                          <td>10 Kids Unaware of Their Halloween Costume</td>
+                          <td><p><i class="fa-regular fa-eye inline"></i><span class="px-2 ">665</span></p></td>
+                        </tr>
+                        <tr>
+                          <td>10 Kids Unaware of Their Halloween Costume</td>
+                          <td><p><i class="fa-regular fa-eye inline"></i><span class="px-2 ">665</span></p></td>
+                        </tr>
+                      </table>
+                     </div>
+
+                    </div>
+                   </div>
+                </div>
+        </section>
+        this is join our 
+    </main>
+    <footer>
+        
+    </footer>
+    <!-- this is js file link -->
+    <script src="script/script.js"></script>
+</body>
+</html>
