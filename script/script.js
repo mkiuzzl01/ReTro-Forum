@@ -1,8 +1,10 @@
 
-const allPost = async () =>{
-    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
+const allPost = async (search ='') =>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${search}`);
     const data = await res.json();
     showPost(data.posts);
+    // addElement(data.posts);
+
 }
 const latestPost = async ()=>{
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`);
@@ -10,9 +12,10 @@ const latestPost = async ()=>{
     latest(data);
 }
 
-const showPost = (posts)=>{
+const showPost = (posts )=>{
 
     const postsContainer = document.getElementById('post-container');
+    postsContainer.innerHTML = '';
     posts.forEach(element => {
 
         const div = document.createElement('div');
@@ -50,12 +53,36 @@ postsContainer.appendChild(div);
     });
 }
 
+const addElement = (info)=>{
+    const readCard = document.getElementById('read-card');
+    const div = document.createElement('div');
+    div.innerHTML = `
+    <tr>
+    <td> Kids Unaware of Their Halloween Costume</td>
+    <td><p><i class="fa-regular fa-eye inline"></i><span class="px-2 ">665</span></p></td>
+    </tr>
+    `;
+    readCard.appendChild(div);
+    console.log(info);
+}
+
+//this is add post function here
+const addPost = (elementId)=>{
+    console.log(elementId);
+    let cardCount = document.getElementById('read-card-count').innerText;
+    let convertNumber = parseInt(cardCount);
+    const newValue = convertNumber + 1;
+    const setValue = document.getElementById('read-card-count');
+    setValue.innerText = newValue;
+
+    addElement();
+} 
+
+
 //this latestPost function
 const latest = (data)=>{
-    console.log(data);
     const latest = document.getElementById('latest-Post');
     data.forEach(info =>{
-        console.log(info);
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="card w-96 bg-base-100 border-2">
@@ -80,23 +107,11 @@ const latest = (data)=>{
     });
 }
 
-//this is add post function here
-const addPost = (element)=>{
-    let cardCount = document.getElementById('read-card-count').innerText;
-    let convertNumber = parseInt(cardCount);
-    const newValue = convertNumber + 1;
-    const setValue = document.getElementById('read-card-count');
-    setValue.innerText = newValue;
-    const readCard = document.getElementById('read-card');
-    const div = document.createElement('div');
-    div.innerHTML = `
-    <tr>
-    <td>${element} Kids Unaware of Their Halloween Costume</td>
-    <td><p><i class="fa-regular fa-eye inline"></i><span class="px-2 ">665</span></p></td>
-    </tr>
-    `;
-    readCard.appendChild(div);
-} 
-
+//this is search function here
+const search = (isShowData)=>{
+    const inputValue = document.getElementById('search');
+    const value = inputValue.value;
+    allPost(value);
+}
 allPost();
 latestPost();

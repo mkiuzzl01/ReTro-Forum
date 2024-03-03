@@ -41,6 +41,7 @@
                   <a class="btn bg-[#797DFC] text-white font-bold rounded-full">Sign in</a>
                 </div>
               </div>
+            </nav>
         <!-- this is banner part here -->
         <div class="hero bg-[#12132D] text-white bg-[url(images/bgbanner.png)] lg:p-24 rounded-xl">
             <div class="hero-content flex-col lg:flex-row">
@@ -48,8 +49,8 @@
                 <h1 class="text-4xl lg:text-6xl font-black">Welcome to the <span class="text-[#797DFC]-to-r from to text-[#797DFC]">ReTro</span> Forum</h1>
                 <p>Share your favorite opinion and win and wp <br> forum coffee mug!</p>
                 <label class="input max-w-[400px] rounded-3xl input-bordered flex items-center gap-2">
-                    <input type="text" class="grow text-black" placeholder="Search here anything" />
-                    <button class="btn bg-[#797DFC] rounded-3xl text-white">Search</button>
+                    <input id="search" type="text" class="grow text-black" placeholder="Search here anything" />
+                    <button onclick="search()" class="btn bg-[#797DFC] rounded-3xl text-white">Search</button>
                   </label>
               </div>
               <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -76,7 +77,7 @@
               </div>
             </div>
           </div>
-        </nav>
+        
     </header>
     <main class="max-w-[1170px] m-auto">
         <!-- let's discuss section -->
@@ -113,7 +114,7 @@
         <!-- this is join our forum section here -->
         <section class="mt-24">
           <div class=" flex flex-col lg:flex-row justify-between items-center  bg-[#12132D] text-white rounded-xl"> 
-`          <div class="space-y-4 p-10">
+            <div class="space-y-4 p-16">
             <h1 class="text-4xl font-black">Join Our Forum</h1>
             <p>Share your favorite opinion and win and wp forum coffee mug! Yes, you can <br> run unit tests and view the results directly within the app.</p>
             <button class="btn bg-[#797DFC] border-0 text-white">Registered Now</button>
