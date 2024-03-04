@@ -40,7 +40,7 @@ const showPost = (posts)=>{
                 <div class="flex space-x-2">
                     <p><i class="fa-regular fa-message"></i><span class="px-2">${element.comment_count}</span></p>
                     <p><i class="fa-regular fa-eye"></i><span class="px-2">${element.view_count}</span></p>
-                    <p><i class="fa-regular fa-clock"></i><span class="px-2">${element.posted_time}</span></p>
+                    <p><i class="fa-regular fa-clock"></i><span class="px-2">${element.posted_time}</span>min</p>
                 </div> 
                 <div><button onclick="addPost('${element.title.replace("'","")}','${element.view_count}')" class="btn bg-[#10B981] p-4 rounded-full text-white"><i class="fa-regular fa-envelope-open"></i></button></i></div>
               </div>
@@ -96,7 +96,7 @@ const latest = (data)=>{
     data.forEach(info =>{
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="card w-full bg-base-100 border-2">
+        <div class="card w-full bg-base-100 border-2 p-4">
         <figure><img src="${info.cover_image}" alt="Shoes" /></figure>
         <div class="card-body">
           <div class="space-x-2">
