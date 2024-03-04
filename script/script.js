@@ -2,8 +2,9 @@
 const allPost = async (search ='') =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${search}`);
     const data = await res.json();
-    showPost(data.posts);
-    // addElement(data.posts);
+    const info = data.posts;
+    showPost(info);
+    LoadingSpinner(true)
 
 }
 const latestPost = async ()=>{
@@ -12,23 +13,24 @@ const latestPost = async ()=>{
     latest(data);
 }
 
-const showPost = (posts )=>{
+const showPost = (posts)=>{
 
     const postsContainer = document.getElementById('post-container');
-    postsContainer.innerHTML = '';
+    postsContainer.innerHTML = "";
     posts.forEach(element => {
 
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="card max-w-[600px]: bg-[#F3F3F5] p-10 mb-4">
         <div class="flex space-x-3">
-            <div>
-                <img src="${element.image}" alt="Shoes" class="w-20 rounded-full" />
-            </div>
-          <div>
+          <div class="indicator w-34 h-32">
+            <span class="indicator-item badge ${element.isActive? "bg-green-500":" bg-red-500"}"></span> 
+               <img src="${element.image}" alt="Shoes" class="rounded-3xl" />
+           </div>
+        <div>
             <div>
                 <div class="border-dashed border-b-2 space-y-2">
-                    <p class="">#<span class="px-1">${element.category}</span>Author:<span>${element.author.name}</span></p>
+                    <p class="">#<span class="px-1">${element.category}</span> Author:<span class="px-1">${element.author?.name}</span></p>
                     <h2 class="card-title">${element.title}</h2>
                       <p class="pb-2">${element.description}</p>
                 </div>
@@ -40,7 +42,7 @@ const showPost = (posts )=>{
                     <p><i class="fa-regular fa-eye"></i><span class="px-2">${element.view_count}</span></p>
                     <p><i class="fa-regular fa-clock"></i><span class="px-2">${element.posted_time}</span></p>
                 </div> 
-                <div><button onclick="addPost(${element.id})" class="btn bg-[#10B981] p-4 rounded-full text-white"><i class="fa-regular fa-envelope-open"></i></button></i></div>
+                <div><button onclick="addPost('${element.title.replace("'","")}','${element.view_count}')" class="btn bg-[#10B981] p-4 rounded-full text-white"><i class="fa-regular fa-envelope-open"></i></button></i></div>
               </div>
             </div>
           </div>
@@ -51,32 +53,41 @@ const showPost = (posts )=>{
 postsContainer.appendChild(div);
 
     });
+    setTimeout(() => {
+    LoadingSpinner(false);
+    }, 2000);
 }
 
-const addElement = (info)=>{
-    const readCard = document.getElementById('read-card');
-    const div = document.createElement('div');
-    div.innerHTML = `
-    <tr>
-    <td> Kids Unaware of Their Halloween Costume</td>
-    <td><p><i class="fa-regular fa-eye inline"></i><span class="px-2 ">665</span></p></td>
-    </tr>
-    `;
-    readCard.appendChild(div);
-    console.log(info);
-}
-
-//this is add post function here
-const addPost = (elementId)=>{
-    console.log(elementId);
+//read count function
+const readCount = ()=>{
     let cardCount = document.getElementById('read-card-count').innerText;
     let convertNumber = parseInt(cardCount);
     const newValue = convertNumber + 1;
     const setValue = document.getElementById('read-card-count');
     setValue.innerText = newValue;
+}
+//this is add post function here
+const addPost = (elementTile,elementView)=>{
+  const readCard = document.getElementById('read-card');
+  const div = document.createElement('div');
+  div.classList.add('flex')
+  div.innerHTML = `
+    <tr>
+    <div class="card w-full bg-base-100 shadow-xl">
+    <div class="card-body">
+      <div class="card-actions justify-between">
+        <div class="">${elementTile}</div> 
+        <div class="px-2"><i class="fa-regular fa-eye inline"></i> ${elementView}</div>
+      </div>
+    </div>
+  </div>
 
-    addElement();
-} 
+    </tr>
+    `;
+    readCard.appendChild(div);
+    readCount();
+    console.log(elementTile,elementView);
+  } 
 
 
 //this latestPost function
@@ -85,7 +96,7 @@ const latest = (data)=>{
     data.forEach(info =>{
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="card w-96 bg-base-100 border-2">
+        <div class="card w-full bg-base-100 border-2">
         <figure><img src="${info.cover_image}" alt="Shoes" /></figure>
         <div class="card-body">
           <div class="space-x-2">
@@ -108,10 +119,20 @@ const latest = (data)=>{
 }
 
 //this is search function here
-const search = (isShowData)=>{
+const search = ()=>{
+    LoadingSpinner(true);
     const inputValue = document.getElementById('search');
     const value = inputValue.value;
     allPost(value);
+}
+//Loading spinner function
+const LoadingSpinner = (isLoading)=>{
+    const spinner = document.getElementById('loading-spinner');
+    if(isLoading){
+        spinner.classList.remove('hidden');
+    }else{
+        spinner.classList.add('hidden');
+    }
 }
 allPost();
 latestPost();

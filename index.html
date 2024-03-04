@@ -22,10 +22,10 @@
                     </div>
                     <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                        <div class="flex flex-col space-y-2 ">
-                    <button class="btn rounded-full border p-4"><i class="fa-solid fa-house-chimney"></i><button>
-                    <button class="btn rounded-full border p-4"><i class="fa-solid fa-pencil"></i></button>
-                    <button class="btn rounded-full border p-4"><i class="fa-solid fa-user-plus"></i></button>
-                    <button class="btn rounded-full border p-4"><i class="fa-regular fa-flag"></i></button>
+                        <button title="Home" class="btn rounded-full border p-4"><i class="fa-solid fa-house-chimney"></i></button>
+                        <button title="Edit" class="btn rounded-full border p-4"><i class="fa-solid fa-pencil"></i></button>
+                        <button title="User" class="btn rounded-full border p-4"><i class="fa-solid fa-user-plus"></i></button>
+                        <button title="Contact" class="btn rounded-full border p-4"><i class="fa-regular fa-flag"></i></button>
                        </div>
                     </ul>
                   </div>
@@ -80,6 +80,12 @@
         
     </header>
     <main class="max-w-[1170px] m-auto">
+       <!-- loading spinner-->
+       <section class="text-center">
+        <div id="loading-spinner" class="hidden">
+          <span class="loading loading-bars loading-lg"></span>
+        </div>
+      </section>
         <!-- let's discuss section -->
         <section class="p-10 lg:p-20 text-center space-y-4">
             <h1 class="text-4xl font-black">Let’s Discuss</h1>
@@ -88,10 +94,10 @@
         <!-- this is discuss card container section -->
         <section>
             <div class="flex flex-col lg:flex-row justify-between gap-6">
-              <div id="post-container">
+              <div id="post-container" class="w-full">
                 <!-- here post dynamically updated -->
               </div>
-                <div class="card bg-[#F3F3F5] max-w-[380px]">
+                <div class="card bg-[#F3F3F5] w-full">
                     <div class="card-body text-[#12132DCC] font-medium">
                      <table>
                          <tr>
@@ -99,9 +105,9 @@
                              <th>Mark as read (<span id="read-card-count">0</span>)</th>
                          </tr>
                      </table>
-                     <div class="flex justify-between">
+                     <div class="mt-4">
                        <table>
-                         <div id="read-card">
+                         <div id="read-card" class="space-y-2">
                           <!-- this content dynamically changeable -->
 
                         </div>
@@ -132,14 +138,13 @@
           </div>
           <!-- this card container section -->
           <div class="pt-12">
-            <div id="latest-Post" class="grid grid-cols-1 lg:grid-cols-3">
+            <div id="latest-Post" class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <!-- here content dynamically changes -->
             </div>
           </div>
         </section>
     </main>
     <footer class="footer footer-center mt-24 p-6 bg-base-200 text-base-content rounded">
-      <hr>
       <nav class="grid grid-flow-col gap-4">
         <h1 class="text-4xl font-black">Retro</h1>
       </nav> 
@@ -151,7 +156,7 @@
        <i class="fa-brands fa-instagram text-2xl"></i>
        <i class="fa-brands fa-github text-2xl"></i>
       </div>
-      <hr class="">
+      <hr class="w-full lg:w-[1170px]">
     </nav> 
     <aside>
         <p>2017, All Rights Reserved.</p>
