@@ -1,168 +1,261 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- this is tailwind and daisy ui cdn link -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- this is fontawesome icon cdn -->
-    <script src="https://kit.fontawesome.com/4287072886.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/4287072886.js"
+      crossorigin="anonymous"
+    ></script>
     <title>ReTro</title>
-</head>
-<body class="mulish-font">
+  </head>
+  <body class="mulish-font">
     <header class="max-w-[1170px] m-auto">
-        <!-- this is navigation bar here -->
-        <nav>
-            <div class="navbar bg-base-100">
-                <div class="navbar-start">
-                  <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                    </div>
-                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                       <div class="flex flex-col space-y-2 ">
-                        <button title="Home" class="btn rounded-full border p-4"><i class="fa-solid fa-house-chimney"></i></button>
-                        <button title="Edit" class="btn rounded-full border p-4"><i class="fa-solid fa-pencil"></i></button>
-                        <button title="User" class="btn rounded-full border p-4"><i class="fa-solid fa-user-plus"></i></button>
-                        <button title="Contact" class="btn rounded-full border p-4"><i class="fa-regular fa-flag"></i></button>
-                       </div>
-                    </ul>
-                  </div>
-                  <a><img src="images/logo.png" alt=""></a>
+      <!-- this is navigation bar here -->
+      <nav>
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <div class="flex flex-col space-y-2">
+                  <button title="Home" class="btn rounded-full border p-4">
+                    <i class="fa-solid fa-house-chimney"></i>
+                  </button>
+                  <button title="Edit" class="btn rounded-full border p-4">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button title="User" class="btn rounded-full border p-4">
+                    <i class="fa-solid fa-user-plus"></i>
+                  </button>
+                  <button title="Contact" class="btn rounded-full border p-4">
+                    <i class="fa-regular fa-flag"></i>
+                  </button>
                 </div>
-                <div class="navbar-end space-x-2">
-                    <div class="hidden lg:flex space-x-2">
-                    <button title="Home" class="btn rounded-full border p-4"><i class="fa-solid fa-house-chimney"></i></button>
-                    <button title="Edit" class="btn rounded-full border p-4"><i class="fa-solid fa-pencil"></i></button>
-                    <button title="User" class="btn rounded-full border p-4"><i class="fa-solid fa-user-plus"></i></button>
-                    <button title="Contact" class="btn rounded-full border p-4"><i class="fa-regular fa-flag"></i></button>
-                    </div>
-                  <a class="btn bg-[#797DFC] text-white font-bold rounded-full">Sign in</a>
-                </div>
-              </div>
-            </nav>
-        <!-- this is banner part here -->
-        <div class="hero bg-[#12132D] text-white bg-[url(images/bgbanner.png)] lg:p-24 rounded-xl">
-            <div class="hero-content flex-col lg:flex-row">
-              <div class="flex flex-col space-y-2">
-                <h1 class="text-4xl lg:text-6xl font-black">Welcome to the <span class="text-[#797DFC]-to-r from to text-[#797DFC]">ReTro</span> Forum</h1>
-                <p>Share your favorite opinion and win and wp <br> forum coffee mug!</p>
-                <label class="input max-w-[400px] rounded-3xl input-bordered flex items-center gap-2">
-                    <input id="search" type="text" class="grow text-black" placeholder="Search here anything" />
-                    <button onclick="search()" class="btn bg-[#797DFC] rounded-3xl text-white">Search</button>
-                  </label>
-              </div>
-              <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-               <div class="card-body text-[#12132DCC] font-medium">
-                <table>
-                    <tr>
-                        <td>Registered Users</td>
-                        <td>01</td>
-                    </tr>
-                    <tr>
-                        <td>Forum</td>
-                        <td>05</td>
-                    </tr>
-                    <tr>
-                        <td>Topics</td>
-                        <td>01</td>
-                    </tr>
-                    <tr>
-                        <td>Replies</td>
-                        <td>01</td>
-                    </tr>
-                </table>
-               </div>
-              </div>
+              </ul>
             </div>
+            <a><img src="images/logo.png" alt="" /></a>
           </div>
-        
-    </header>
-    <main class="max-w-[1170px] m-auto">
-       <!-- loading spinner-->
-       <section class="text-center">
-        <div id="loading-spinner" class="hidden">
+          <div class="navbar-end space-x-2">
+            <div class="hidden lg:flex space-x-2">
+              <button title="Home" class="btn rounded-full border p-4">
+                <i class="fa-solid fa-house-chimney"></i>
+              </button>
+              <button title="Edit" class="btn rounded-full border p-4">
+                <i class="fa-solid fa-pencil"></i>
+              </button>
+              <button title="User" class="btn rounded-full border p-4">
+                <i class="fa-solid fa-user-plus"></i>
+              </button>
+              <button title="Contact" class="btn rounded-full border p-4">
+                <i class="fa-regular fa-flag"></i>
+              </button>
+            </div>
+            <a class="btn bg-[#797DFC] text-white font-bold rounded-full"
+              >Sign in</a
+            >
+          </div>
+        </div>
+      </nav>
+      <!-- loading spinner-->
+      <section class="text-center">
+        <div id="loading-spinner1" class="hidden">
           <span class="loading loading-bars loading-lg"></span>
         </div>
       </section>
-        <!-- let's discuss section -->
-        <section class="p-10 lg:p-20 text-center space-y-4">
-            <h1 class="text-4xl font-black">Let’s Discuss</h1>
-            <p>Yes, you can run unit tests and view the results directly within the app. <br> The integrated testing features allow for a streamlined .</p>
-        </section>
-        <!-- this is discuss card container section -->
-        <section>
-            <div class="flex flex-col lg:flex-row justify-between gap-6">
-              <div id="post-container" class="w-full">
-                <!-- here post dynamically updated -->
-              </div>
-                <div class="card bg-[#F3F3F5] w-full">
-                    <div class="card-body text-[#12132DCC] font-medium">
-                     <table>
-                         <tr>
-                             <th class="m-4">Registered Users</th>
-                             <th>Mark as read (<span id="read-card-count">0</span>)</th>
-                         </tr>
-                     </table>
-                     <div class="mt-4">
-                       <table>
-                         <div id="read-card" class="space-y-2">
-                          <!-- this content dynamically changeable -->
-
-                        </div>
-                      </table>
-                     </div>
-                    </div>
-                   </div>
-                </div>
-        </section>
-        <!-- this is join our forum section here -->
-        <section class="mt-24">
-          <div class=" flex flex-col lg:flex-row justify-between items-center  bg-[#12132D] text-white rounded-xl"> 
-            <div class="space-y-4 p-16">
-            <h1 class="text-4xl font-black">Join Our Forum</h1>
-            <p>Share your favorite opinion and win and wp forum coffee mug! Yes, you can <br> run unit tests and view the results directly within the app.</p>
-            <button class="btn bg-[#797DFC] border-0 text-white">Registered Now</button>
+      <!-- this is banner part here -->
+      <div
+        class="hero bg-[#12132D] text-white bg-[url(images/bgbanner.png)] lg:p-24 rounded-xl"
+      >
+        <div class="hero-content flex-col lg:flex-row">
+          <div class="flex flex-col space-y-2">
+            <h1 class="text-4xl lg:text-6xl font-black">
+              Welcome to the
+              <span class="text-[#797DFC]-to-r from to text-[#797DFC]"
+                >ReTro</span
+              >
+              Forum
+            </h1>
+            <p>
+              Share your favorite opinion and win and wp <br />
+              forum coffee mug!
+            </p>
+            <label
+              class="input max-w-[400px] rounded-3xl input-bordered flex items-center gap-2"
+            >
+              <input
+                id="search"
+                type="text"
+                class="grow text-black"
+                placeholder="Search here anything"
+              />
+              <button
+                onclick="search()"
+                class="btn bg-[#797DFC] rounded-3xl text-white"
+              >
+                Search
+              </button>
+            </label>
           </div>
-          <div class="pt-14 ">
-            <img src="images/joinforum.png" alt="">
-          </div>
-          </div>
-        </section>
-        <!-- this latest post section section here -->
-        <section>
-          <div class="text-center pt-24">
-            <h1 class="text-4xl font-black">Latest Posts</h1>
-            <p>Yes, you can run unit tests and view the results directly within the app. <br> The integrated testing features allow for a streamlined .</p>
-          </div>
-          <!-- this card container section -->
-          <div class="pt-12">
-            <div id="latest-Post" class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-              <!-- here content dynamically changes -->
+          <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div class="card-body text-[#12132DCC] font-medium">
+              <table>
+                <tr>
+                  <td>Registered Users</td>
+                  <td>01</td>
+                </tr>
+                <tr>
+                  <td>Forum</td>
+                  <td>05</td>
+                </tr>
+                <tr>
+                  <td>Topics</td>
+                  <td>01</td>
+                </tr>
+                <tr>
+                  <td>Replies</td>
+                  <td>01</td>
+                </tr>
+              </table>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </header>
+    <main class="max-w-[1170px] m-auto">
+      <!-- loading spinner-->
+      <section class="text-center">
+        <div id="loading-spinner2" class="hidden">
+          <span class="loading loading-bars loading-lg"></span>
+        </div>
+      </section>
+      <!-- let's discuss section -->
+      <section class="p-10 lg:p-20 text-center space-y-4">
+        <h1 class="text-4xl font-black">Let’s Discuss</h1>
+        <p>
+          Yes, you can run unit tests and view the results directly within the
+          app. <br />
+          The integrated testing features allow for a streamlined .
+        </p>
+      </section>
+      <!-- this is discuss card container section -->
+      <section>
+        <div class="flex flex-col lg:flex-row justify-between gap-6">
+          <div id="post-container" class="w-full">
+            <!-- here post dynamically updated -->
+          </div>
+          <div class="card bg-[#F3F3F5] w-full">
+            <div class="card-body text-[#12132DCC] font-medium">
+              <table>
+                <tr>
+                  <th class="m-4">Registered Users</th>
+                  <th>Mark as read (<span id="read-card-count">0</span>)</th>
+                </tr>
+              </table>
+              <div class="mt-4">
+                <table>
+                  <div id="read-card" class="space-y-2">
+                    <!-- this content dynamically changeable -->
+                  </div>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- this is join our forum section here -->
+      <section class="mt-24">
+        <div
+          class="flex flex-col lg:flex-row justify-between items-center bg-[#12132D] text-white rounded-xl"
+        >
+          <div class="space-y-4 p-16">
+            <h1 class="text-4xl font-black">Join Our Forum</h1>
+            <p>
+              Share your favorite opinion and win and wp forum coffee mug! Yes,
+              you can <br />
+              run unit tests and view the results directly within the app.
+            </p>
+            <button class="btn bg-[#797DFC] border-0 text-white">
+              Registered Now
+            </button>
+          </div>
+          <div class="pt-14">
+            <img src="images/joinforum.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <!-- this latest post section section here -->
+      <section>
+        <div class="text-center pt-24">
+          <h1 class="text-4xl font-black">Latest Posts</h1>
+          <p>
+            Yes, you can run unit tests and view the results directly within the
+            app. <br />
+            The integrated testing features allow for a streamlined .
+          </p>
+        </div>
+        <!-- this card container section -->
+        <div class="pt-12">
+          <div
+            id="latest-Post"
+            class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+          >
+            <!-- here content dynamically changes -->
+          </div>
+        </div>
+      </section>
     </main>
-    <footer class="footer footer-center mt-24 p-6 bg-base-200 text-base-content rounded">
+    <footer
+      class="footer footer-center mt-24 p-6 bg-base-200 text-base-content rounded"
+    >
       <nav class="grid grid-flow-col gap-4">
         <h1 class="text-4xl font-black">Retro</h1>
-      </nav> 
+      </nav>
       <nav>
-       <p>Contrary to popular belief, Lorem Ipsum is not simply random text. <br> It has roots in a piece of classical Latin literature from 45 BC</p>
-       <div class="space-x-2">
-        <i class="fa-brands fa-twitter text-2xl"></i>
-       <i class="fa-brands fa-facebook-f text-2xl"></i>
-       <i class="fa-brands fa-instagram text-2xl"></i>
-       <i class="fa-brands fa-github text-2xl"></i>
-      </div>
-      <hr class="w-full lg:w-[1170px]">
-    </nav> 
-    <aside>
+        <p>
+          Contrary to popular belief, Lorem Ipsum is not simply random text.
+          <br />
+          It has roots in a piece of classical Latin literature from 45 BC
+        </p>
+        <div class="space-x-2">
+          <i class="fa-brands fa-twitter text-2xl"></i>
+          <i class="fa-brands fa-facebook-f text-2xl"></i>
+          <i class="fa-brands fa-instagram text-2xl"></i>
+          <i class="fa-brands fa-github text-2xl"></i>
+        </div>
+        <hr class="w-full lg:w-[1170px]" />
+      </nav>
+      <aside>
         <p>2017, All Rights Reserved.</p>
       </aside>
     </footer>
     <!-- this is js file link -->
     <script src="script/script.js"></script>
-</body>
+  </body>
 </html>

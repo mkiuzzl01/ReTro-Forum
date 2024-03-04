@@ -127,11 +127,14 @@ const search = ()=>{
 }
 //Loading spinner function
 const LoadingSpinner = (isLoading)=>{
-    const spinner = document.getElementById('loading-spinner');
+    const spinner1 = document.getElementById('loading-spinner1');
+    const spinner2 = document.getElementById('loading-spinner2');
     if(isLoading){
-        spinner.classList.remove('hidden');
+        spinner1.classList.remove('hidden');
+        spinner2.classList.remove('hidden');
     }else{
-        spinner.classList.add('hidden');
+        spinner1.classList.add('hidden');
+        spinner2.classList.add('hidden');
     }
 }
 allPost();
