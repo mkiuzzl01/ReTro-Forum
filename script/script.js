@@ -21,7 +21,7 @@ const showPost = (posts)=>{
 
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="card max-w-[600px]: bg-[#F3F3F5] p-10 mb-4">
+        <div class="card  bg-[#F3F3F5] p-10 mb-4">
         <div class="flex space-x-3">
           <div class="indicator w-34 h-32">
             <span class="indicator-item badge ${element.isActive? "bg-green-500":" bg-red-500"}"></span> 
@@ -96,7 +96,7 @@ const latest = (data)=>{
     data.forEach(info =>{
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="card w-full bg-base-100 border-2 p-4">
+        <div class="card w-full bg-base-100 border-2 p-3">
         <figure><img src="${info.cover_image}" alt="Shoes" /></figure>
         <div class="card-body">
           <div class="space-x-2">
