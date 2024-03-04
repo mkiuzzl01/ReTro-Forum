@@ -3,7 +3,9 @@ const allPost = async (search ='') =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${search}`);
     const data = await res.json();
     const info = data.posts;
-    showPost(info);
+    setTimeout(() => {
+      showPost(info);
+    }, 2000);
     LoadingSpinner(true)
 
 }
@@ -15,11 +17,11 @@ const latestPost = async ()=>{
 
 const showPost = (posts)=>{
 
-    const postsContainer = document.getElementById('post-container');
-    postsContainer.innerHTML = "";
-    posts.forEach(element => {
-
-        const div = document.createElement('div');
+  setTimeout(() => {
+      const postsContainer = document.getElementById('post-container');
+      postsContainer.innerHTML = "";
+         posts.forEach(element => {
+            const div = document.createElement('div');
         div.innerHTML = `
         <div class="card  bg-[#F3F3F5] p-10 mb-4">
         <div class="flex space-x-3">
@@ -47,16 +49,15 @@ const showPost = (posts)=>{
             </div>
           </div>
           </div>
-    </div>
-    
-        `;
-postsContainer.appendChild(div);
-
-    });
-    setTimeout(() => {
-    LoadingSpinner(false);
+    </div>`;
+    postsContainer.appendChild(div);
     }, 2000);
+    
+  });
+  LoadingSpinner(false);
+   
 }
+
 
 //read count function
 const readCount = ()=>{
