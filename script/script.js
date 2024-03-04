@@ -23,7 +23,7 @@ const showPost = (posts)=>{
         div.innerHTML = `
         <div class="card  bg-[#F3F3F5] p-10 mb-4">
         <div class="flex space-x-3">
-          <div class="indicator w-34 h-32">
+          <div class="indicator w-32 h-24 lg:w-34 lg:h-32">
             <span class="indicator-item badge ${element.isActive? "bg-green-500":" bg-red-500"}"></span> 
                <img src="${element.image}" alt="Shoes" class="rounded-3xl" />
            </div>
