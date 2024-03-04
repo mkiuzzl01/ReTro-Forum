@@ -25,7 +25,7 @@ const showPost = (posts)=>{
         <div class="flex space-x-3">
           <div class="indicator w-32 h-24 lg:w-34 lg:h-32">
             <span class="indicator-item badge ${element.isActive? "bg-green-500":" bg-red-500"}"></span> 
-               <img src="${element.image}" alt="Shoes" class="rounded-3xl" />
+               <img src="${element.image}" alt="coming soon" class="rounded-3xl" />
            </div>
         <div>
             <div>
@@ -97,7 +97,7 @@ const latest = (data)=>{
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="card w-full bg-base-100 border-2 p-3">
-        <figure><img src="${info.cover_image}" alt="Shoes" /></figure>
+        <figure><img src="${info.cover_image}" alt="coming soon" /></figure>
         <div class="card-body">
           <div class="space-x-2">
             <i class="fa-regular fa-calendar"></i>
@@ -106,7 +106,7 @@ const latest = (data)=>{
           <h2 class="font-extrabold"><span>${info.title}</span></h2>
           <p>${info.description}</p>
           <div class="card-actions">
-            <div><img src="${info.profile_image}" alt="" class="w-14 rounded-full"></div> 
+            <div><img src="${info.profile_image}" alt="coming soon" class="w-14 rounded-full"></div> 
             <div>
               <h2><span>${info.author.name?`${info.author.name}`:`Unknown`}</span></h2>
               <h4>${info.author?.designation?`${info.author.designation}`:`Unknown`}</h4>
